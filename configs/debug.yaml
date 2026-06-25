@@ -1,0 +1,26 @@
+project:
+  data_dir: home-credit-default-risk
+  artifacts_dir: artifacts
+  random_seed: 42
+
+split:
+  holdout_size: 0.2
+
+training:
+  num_boost_round: 120
+  early_stopping_rounds: 20
+  cv_folds: 1
+  cv_num_boost_round: 0
+  cv_early_stopping_rounds: 0
+  params:
+    objective: binary
+    metric: auc
+    learning_rate: 0.05
+    num_leaves: 31
+    feature_fraction: 0.8
+    bagging_fraction: 0.8
+    bagging_freq: 1
+    min_data_in_leaf: 50
+    verbosity: -1
+    seed: 42
+  param_grid: {}
